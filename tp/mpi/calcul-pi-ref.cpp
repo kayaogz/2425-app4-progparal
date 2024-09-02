@@ -41,7 +41,7 @@ int main(int argc, char **argv)
       MPI_Recv(&pi, 1, MPI_DOUBLE, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
       printf("Rank: %d, pi: %lf\n", rank, pi);
   }
-//  MPI_Reduce(&piLocal, &pi, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+//  MPI_Allreduce(&piLocal, &pi, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
   if (rank == 0) { printf("Pi: %lf\n", pi); }
 
   MPI_Finalize();
