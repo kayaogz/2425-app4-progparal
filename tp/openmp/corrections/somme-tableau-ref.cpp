@@ -6,15 +6,15 @@
 int main()
 {
   int i;
-  int N = 10000000;
+  int N = 100;
   std::vector<double> A(N);
   double somme = 0.0;
 
   auto start = std::chrono::high_resolution_clock::now();
-#pragma omp parallel default(none) num_threads(4) shared(somme, A, N, i)
+#pragma omp parallel default(none) num_threads(4) shared(somme, A, N)
   {
 #pragma omp for
-    for (i = 0; i < N; i++) {
+    for (int i = 0; i < N; i++) {
       A[i] = (double)i;
     } // barrier implicite
     
