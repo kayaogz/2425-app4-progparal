@@ -66,7 +66,7 @@ int main(int argc, char** argv) {
     } // barriere implicite
   } // fin region parallele
 
-  merge(temp, size, a);
+  merge(a, size, temp);
 
   verify(a, size);
 }
